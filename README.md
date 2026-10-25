@@ -18,13 +18,18 @@
 
 ## 📌 Overview
 
-Visualize RDP brute-force sources on an interactive map ║
+ORadar visualises RDP brute-force attack sources on an interactive geographic heatmap. It parses Windows EVTX logon-failure events (Event 4625, LogonType 10) and CSV input, geolocates source IPs via the ip-api.com batch API, and exports SIEM-ready output. An offline mode skips all geolocation lookups.
 
 ---
 
 ## ✨ Features
 
-- Visualize RDP brute-force sources from Windows EVTX/CSV logs as an interactive geographic heatmap
+- Parses Windows EVTX (Event 4625, LogonType 10) and CSV sources
+- Geolocates RDP brute-force source IPs via the ip-api.com batch API (no key required)
+- Generates an interactive HTML heatmap of attack origins
+- Exports SIEM-ready JSON and CSV
+- Offline mode that skips all geolocation lookups
+- Offline sandboxed self-test
 
 ---
 
@@ -39,6 +44,9 @@ Visualize RDP brute-force sources on an interactive map ║
 
 ```bash
 ./ORadar
+./ORadar --no-geo
+./ORadar --self-test
+./ORadar --help
 ```
 
 ---
